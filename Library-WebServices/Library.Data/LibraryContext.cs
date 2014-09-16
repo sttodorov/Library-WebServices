@@ -11,7 +11,7 @@
     {
 
         public LibraryContext()
-            : base("DefaultConnection")
+            : base("LibraryConnection")
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<LibraryContext, Configuration>());
         }

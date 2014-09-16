@@ -6,7 +6,11 @@
     public interface ILibraryData
     {
         IGenericRepository<Author> Authors { get; }
+
         IGenericRepository<Book> Books { get; }
+
         IGenericRepository<Genre> Genres { get; }
+
+        void SaveChanges();
     }
 }
