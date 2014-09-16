@@ -2,7 +2,7 @@
 {
     public enum Status
     {
-        Aviable,
+        Available,
         Taken
     }
 }
