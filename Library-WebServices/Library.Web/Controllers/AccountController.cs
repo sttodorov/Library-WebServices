@@ -17,11 +17,13 @@ using delete.Models;
 using delete.Providers;
 using delete.Results;
 using Library.Model;
+using System.Web.Http.Cors;
 
 namespace delete.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCors("*", "*", "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
