@@ -24,11 +24,11 @@ namespace Library.Data
             this.repositories = new Dictionary<Type, object>();
         }
 
-        public IGenericRepository<User> Users
+        public IGenericRepository<ApplicationUser> Users
         {
             get
             {
-                return this.GetRepository<User>();
+                return this.GetRepository<ApplicationUser>();
             }
         }
 

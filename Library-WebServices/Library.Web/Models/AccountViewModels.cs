@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Library.Web.Models
+namespace delete.Models
 {
     // Models returned by AccountController actions.
 
@@ -18,7 +18,7 @@ namespace Library.Web.Models
     {
         public string LocalLoginProvider { get; set; }
 
-        public string UserName { get; set; }
+        public string Email { get; set; }
 
         public IEnumerable<UserLoginInfoViewModel> Logins { get; set; }
 
@@ -27,7 +27,7 @@ namespace Library.Web.Models
 
     public class UserInfoViewModel
     {
-        public string UserName { get; set; }
+        public string Email { get; set; }
 
         public bool HasRegistered { get; set; }
 

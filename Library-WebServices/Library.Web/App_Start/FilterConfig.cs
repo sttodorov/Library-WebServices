@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Library.Web
+namespace delete
 {
     public class FilterConfig
     {

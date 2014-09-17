@@ -1,4 +1,4 @@
-﻿namespace Library.Web
+﻿namespace delete
 {
     using System.Web.Http;
     using System.Web.OData.Extensions;

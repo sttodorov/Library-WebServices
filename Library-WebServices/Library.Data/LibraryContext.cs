@@ -7,7 +7,7 @@
     using Library.Data.Migrations;
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    class LibraryContext : IdentityDbContext<User> , ILibraryContext
+    public class LibraryContext : IdentityDbContext<ApplicationUser> , ILibraryContext
     {
 
         public LibraryContext()

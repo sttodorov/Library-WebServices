@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Library.Web.Areas.HelpPage
+namespace delete.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

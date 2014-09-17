@@ -5,11 +5,11 @@ namespace Library.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Library.Data.LibraryContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LibraryContext>
     {
         public Configuration()
         {
-            ContextKey = "Library.Data.LibraryContext";
+            //ContextKey = "Library.Data.LibraryContext";
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = false;
         }
