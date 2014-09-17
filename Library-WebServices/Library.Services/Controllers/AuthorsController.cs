@@ -7,6 +7,7 @@
 
     using Library.Data;
     using Library.Model;
+    using Library.Services.Models;
 
     public class AuthorsController : ApiController
     {
@@ -35,6 +36,7 @@
                 .Authors
                 .All()
                 .Where(s => s.AuthorId == id)
+                .Select(AuthorModel.FromAuthor)
                 .FirstOrDefault();
 
             if (student == null)
@@ -46,7 +48,7 @@
         }
 
         [HttpPost]
-        public IHttpActionResult Create(Author author)
+        public IHttpActionResult Create(AuthorModel author)
         {
             if (!this.ModelState.IsValid)
             {
@@ -67,7 +69,7 @@
         }
 
         [HttpPut]
-        public IHttpActionResult Update(int id, Author author)
+        public IHttpActionResult Update(int id, AuthorModel author)
         {
             if (!this.ModelState.IsValid)
             {
@@ -77,7 +79,7 @@
             var authorFromDb = this.data.Authors.All().FirstOrDefault(s => s.AuthorId == id);
             if (authorFromDb == null)
             {
-                return BadRequest("Such student does not exists!");
+                return BadRequest("Such student does not exist!");
             }
 
             authorFromDb.FirstName = author.FirstName;
