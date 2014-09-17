@@ -5,6 +5,8 @@
 
     public interface ILibraryData
     {
+        IGenericRepository<ApplicationUser> Users { get; }
+
         IGenericRepository<Author> Authors { get; }
 
         IGenericRepository<Book> Books { get; }

@@ -13,10 +13,10 @@
     {
         private ILibraryData data;
 
-        public AuthorsController()
-            : this(new LibraryData())
-        {
-        }
+        //public AuthorsController()
+        //    : this(new LibraryData())
+        //{
+        //}
 
         public AuthorsController(ILibraryData data)
         {
