@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace delete.Controllers
 {
-    [EnableCors("*", "*", "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HomeController : Controller
     {
         public ActionResult Index()
