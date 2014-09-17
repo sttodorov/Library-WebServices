@@ -103,16 +103,12 @@
             this.data.Books.Add(newBook);
             this.data.SaveChanges();
 
-            return Ok(newBook);
+            return Ok(newBook.BookId);
         }
 
         [HttpPut]
         public IHttpActionResult ChangeStatus(int id)
         {
-            //if (!this.ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
             var currentUserId = User.Identity.GetUserId();
 
             var bookFromDb = this.data.Books.All().FirstOrDefault(s => s.BookId == id);
@@ -132,7 +128,7 @@
             }
 
             this.data.SaveChanges();
-            return Ok();
+            return Ok("Status chanched!");
 
         }
 
@@ -150,26 +146,5 @@
 
             return Ok();
         }
-
-        //[HttpPost]
-        //public IHttpActionResult AddAuthor(int bookId, int authorId)
-        //{
-        //    var book = this.data.Books.All().FirstOrDefault(s => s.BookId == bookId);
-        //    if (book == null)
-        //    {
-        //        return BadRequest("Book does not exist - invalid id!");
-        //    }
-
-        //    var author = this.data.Authors.All().FirstOrDefault(c => c.AuthorId == authorId);
-        //    if (author == null)
-        //    {
-        //        return BadRequest("Author does not exist - invalid id!");
-        //    }
-
-        //    book.Authors.Add(author);
-        //    this.data.SaveChanges();
-
-        //    return Ok();
-        //}
     }
 }
