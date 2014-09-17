@@ -1,10 +1,9 @@
-/*globals define*/
 define(['jquery', 'q'], function ($, Q) {
     'use strict';
     var requester;
     requester = (function () {
         var getJSON = function getJSON(resourceURL) {
-       
+
             var deferred = Q.defer();
 
             deferred.resolve(
@@ -48,6 +47,9 @@ define(['jquery', 'q'], function ($, Q) {
         };
 
 
+        //TODO : Make DELETE query
+
+        //TODO : Check if works 
         var putJSON = function putJSON(resourceURL, data, sessionKey) {
             var deferred = Q.defer();
 
@@ -74,6 +76,7 @@ define(['jquery', 'q'], function ($, Q) {
             getJSON: getJSON,
             postJSON: postJSON,
             putJSON: putJSON
+            //delete
         };
     }());
     return requester;

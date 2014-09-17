@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
+﻿<div id="books-wrapper">
+    <h1>Books:</h1>
+    <ul id="book-list">
+        <li>{{book.Title}} By: {{book.Author}} Status:{{book.Status}}</li>
+    </ul>
 
-</body>
-</html>
+    <input type="text" id="bookTitle" />
+
+    <button>Add Book</button>
+    <button>Take Book</button>
+    <button>Return Book</button>
+    <button>Delete Book By Title</button>
+</div>
