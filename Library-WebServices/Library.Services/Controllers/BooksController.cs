@@ -15,10 +15,10 @@
     {
         private ILibraryData data;
 
-        public BooksController()
-            : this(new LibraryData())
-        {
-        }
+        //public BooksController()
+        //    : this(new LibraryData())
+        //{
+        //}
 
         public BooksController(ILibraryData data)
         {
