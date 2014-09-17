@@ -5,9 +5,12 @@
     using System.Web;
     using System.Web.Http;
 
+    using Microsoft.AspNet.Identity;
+
     using Library.Data;
     using Library.Model;
 
+    [Authorize]
     public class BooksController : ApiController
     {
         private ILibraryData data;
@@ -44,6 +47,12 @@
 
             return Ok(book);
         }
+        [HttpGet]
+        public IHttpActionResult ByStatus(Status status)
+        {
+            var booksByStatus = this.data.Books.All().Where(b => b.Status == status);
+            return Ok(booksByStatus);
+        }
 
         [HttpPost]
         public IHttpActionResult Create(Book book)
@@ -55,26 +64,56 @@
 
             var newBook = new Book
             {
-                Name = book.Name,
-                Authors = book.Authors,
-                Genres = book.Genres,
-                Status = book.Status
+                Name = book.Name
             };
+
+            foreach (var genre in book.Genres)
+            {
+                var currGenreFromDb = this.data.Genres.All().FirstOrDefault(g => g.Name == genre.Name);
+                if (currGenreFromDb == null)
+                {
+                    currGenreFromDb = new Genre
+                    {
+                        Name = genre.Name
+                    };
+                    currGenreFromDb.Books.Add(newBook);
+                    this.data.Genres.Add(currGenreFromDb);
+                }
+
+                newBook.Genres.Add(currGenreFromDb);
+            }
+            
+            foreach (var author in book.Authors)
+            {
+                var currentAuthorFromDb = this.data.Authors.All().FirstOrDefault(a => a.FirstName == author.FirstName && a.LastName == author.LastName);
+                if(currentAuthorFromDb == null)
+                {
+                    currentAuthorFromDb = new Author
+                    {
+                        FirstName = author.FirstName,
+                        LastName = author.LastName
+                    };
+                    currentAuthorFromDb.Books.Add(newBook);
+                    this.data.Authors.Add(currentAuthorFromDb);
+                }
+
+                newBook.Authors.Add(currentAuthorFromDb);
+            }
 
             this.data.Books.Add(newBook);
             this.data.SaveChanges();
 
-            book.BookId = newBook.BookId;
-            return Ok(book);
+            return Ok(newBook);
         }
 
         [HttpPut]
-        public IHttpActionResult Update(int id, Book book)
+        public IHttpActionResult ChangeStatus(int id)
         {
-            if (!this.ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!this.ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
+            var currentUserId = User.Identity.GetUserId();
 
             var bookFromDb = this.data.Books.All().FirstOrDefault(s => s.BookId == id);
             if (bookFromDb == null)
@@ -82,14 +121,19 @@
                 return BadRequest("Such book does not exists!");
             }
 
-            bookFromDb.Name = book.Name;
-            bookFromDb.Authors = book.Authors;
-            bookFromDb.Status = book.Status;
+            if (bookFromDb.Status == Status.Available)
+            {
+                bookFromDb.Status = Status.Taken;
+                bookFromDb.TookenBy.Add(this.data.Users.All().FirstOrDefault(u => u.Id == currentUserId));
+            }
+            else
+            {
+                bookFromDb.Status = Status.Available;
+            }
 
             this.data.SaveChanges();
+            return Ok();
 
-            book.BookId = id;
-            return Ok(book);
         }
 
         [HttpDelete]
@@ -107,25 +151,25 @@
             return Ok();
         }
 
-        [HttpPost]
-        public IHttpActionResult AddAuthor(int bookId, int authorId)
-        {
-            var book = this.data.Books.All().FirstOrDefault(s => s.BookId == bookId);
-            if (book == null)
-            {
-                return BadRequest("Book does not exist - invalid id!");
-            }
+        //[HttpPost]
+        //public IHttpActionResult AddAuthor(int bookId, int authorId)
+        //{
+        //    var book = this.data.Books.All().FirstOrDefault(s => s.BookId == bookId);
+        //    if (book == null)
+        //    {
+        //        return BadRequest("Book does not exist - invalid id!");
+        //    }
 
-            var author = this.data.Authors.All().FirstOrDefault(c => c.AuthorId == authorId);
-            if (author == null)
-            {
-                return BadRequest("Author does not exist - invalid id!");
-            }
+        //    var author = this.data.Authors.All().FirstOrDefault(c => c.AuthorId == authorId);
+        //    if (author == null)
+        //    {
+        //        return BadRequest("Author does not exist - invalid id!");
+        //    }
 
-            book.Authors.Add(author);
-            this.data.SaveChanges();
+        //    book.Authors.Add(author);
+        //    this.data.SaveChanges();
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
     }
 }

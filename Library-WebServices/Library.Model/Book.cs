@@ -6,11 +6,14 @@
     {
         private ICollection<Author> authors;
         private ICollection<Genre> genres;
+        private ICollection<ApplicationUser> tookenBy;
 
         public Book()
         {
             this.Authors = new HashSet<Author>();
             this.Genres = new HashSet<Genre>();
+            this.TookenBy = new HashSet<ApplicationUser>();
+            this.Status = Status.Available;
 
         }
 
@@ -41,6 +44,18 @@
             set
             {
                 this.genres = value;
+            }
+        }
+
+        public virtual ICollection<ApplicationUser> TookenBy
+        {
+            get
+            {
+                return this.tookenBy;
+            }
+            set
+            {
+                this.tookenBy = value;
             }
         }
 
