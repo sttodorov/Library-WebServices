@@ -26,25 +26,25 @@
         [HttpGet]
         public IHttpActionResult All()
         {
-            return Ok(data.Authors.All().Select(a => a.FirstName + " " + a.LastName));
+            return Ok(data.Authors.All().Select(AuthorModel.FromAuthor));
         }
 
         [HttpGet]
         public IHttpActionResult ById(int id)
         {
-            var student = this.data
+            var author = this.data
                 .Authors
                 .All()
                 .Where(s => s.AuthorId == id)
                 .Select(AuthorModel.FromAuthor)
                 .FirstOrDefault();
 
-            if (student == null)
+            if (author == null)
             {
                 return BadRequest("Invalid data! Author with such id does not exist.");
             }
 
-            return Ok(student);
+            return Ok(author);
         }
 
         [HttpPost]
