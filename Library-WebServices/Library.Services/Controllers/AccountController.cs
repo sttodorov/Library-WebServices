@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using Library.Services.Models;
 using Library.Services.Providers;
 using Library.Services.Results;
+using Library.Model;
 
 namespace Library.Services.Controllers
 {
