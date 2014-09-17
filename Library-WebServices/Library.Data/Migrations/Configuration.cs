@@ -11,7 +11,7 @@ namespace Library.Data.Migrations
         {
             //ContextKey = "Library.Data.LibraryContext";
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Library.Data.LibraryContext context)
