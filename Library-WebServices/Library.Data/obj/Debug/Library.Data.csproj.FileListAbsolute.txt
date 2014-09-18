@@ -30,3 +30,19 @@ E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Data\bin\Debug\M
 E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Data\obj\Debug\Library.Data.csprojResolveAssemblyReference.cache
 E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Data\obj\Debug\Library.Data.dll
 E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Data\obj\Debug\Library.Data.pdb
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Library.Data.dll.config
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Library.Data.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Library.Data.pdb
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\EntityFramework.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Library.Model.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Library.Model.pdb
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\EntityFramework.xml
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\obj\Debug\Library.Data.csprojResolveAssemblyReference.cache
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\obj\Debug\Library.Data.dll
+C:\Users\Tanya\Documents\Visual Studio 2013\Projects\WebServicesAndCloud\Teamwork\Library-WebServices\Library.Data\obj\Debug\Library.Data.pdb
