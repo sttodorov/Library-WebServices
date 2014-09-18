@@ -41,6 +41,7 @@
             {
                 return this.genres;
             }
+
             set
             {
                 this.genres = value;
@@ -53,6 +54,7 @@
             {
                 return this.tookenBy;
             }
+
             set
             {
                 this.tookenBy = value;
