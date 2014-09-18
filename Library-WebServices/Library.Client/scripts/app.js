@@ -16,31 +16,38 @@
     require(['sammy', 'jquery', 'libraryController'], function (Sammy, $, libraryController) {
 
         var resourceURL = 'http://melonlibrary.apphb.com/';
-        var libraryApp = new libraryController('#main-content', resourceURL);
+      //  var libraryApp = new libraryController('#main-content', resourceURL);
 
-        libraryApp.addEvents();
+      //  libraryApp.addEvents();
 
-        var app = Sammy('#main-content', function () {
+        var app = Sammy('#main-container', function () {
+
+            this.get('#/', function () {
+                $('#main-container').load('templates/Home.html');
+            });
 
             this.get('#/authors', function () {
+                $('#main-container').load('templates/Authors.html');
+               // this.partial('..//templates//Authors.html');
                 // libraryApp.loadAuthors();
             });
 
             this.get('#/books', function () {
+                $('#main-container').load('templates/Books.html');
                 //  libraryApp.loadBooks();
             });
             this.get('#/searchAuthor', function () {
+                $('#main-container').load('templates/SearchAuthor.html');
                 //  libraryApp.loadFoundedAuthors();
             });
             this.get('#/searchBook', function () {
+                $('#main-container').load('templates/SearchBook.html');
                 // libraryApp.loadFoundedBooks();
             });
 
         });
 
-        $(function () {
-            app.run('#/');
-        });
+        app.run('#/');
 
     });
 }());

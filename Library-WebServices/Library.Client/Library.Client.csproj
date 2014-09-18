@@ -90,6 +90,7 @@
     <Content Include="styles\business-casual.css" />
     <Content Include="templates\Authors.html" />
     <Content Include="templates\Books.html" />
+    <Content Include="templates\Home.html" />
     <Content Include="templates\SearchAuthor.html" />
     <Content Include="templates\SearchBook.html" />
     <Content Include="Web.config" />
