@@ -81,7 +81,6 @@
     <Content Include="scripts\libs\require.js" />
     <Content Include="scripts\libs\RSVP.js" />
     <Content Include="scripts\libs\sammy.js" />
-    <Content Include="scripts\libs\sha1.js" />
     <Content Include="scripts\modules\requester.js" />
     <Content Include="scripts\ui\ui.js" />
     <Content Include="styles\3-col-portfolio.css" />
