@@ -1,58 +1,13 @@
 ﻿<div id="books-wrapper">
-    <div class="box">
-        <hr>
-        <h2 class="intro-text text-center">
-            Books
-        </h2>
-        <hr>
+    <h1>Books:</h1>
+    <ul id="book-list">
+        <li>{{book.Title}} By: {{book.Author}} Status:{{book.Status}}</li>
+    </ul>
 
-        <!--   REMOVE ME -->
-        <div class="col-sm-3 text-center">
-            <img class="img-responsive" src="../img/sample-cover.jpg" alt="">
-            <h3>
-                Title
-                <small>Author</small>
-            </h3>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img class="img-responsive" src="../img/sample-cover.jpg" alt="">
-            <h3>
-                Title
-                <small>Author</small>
-            </h3>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img class="img-responsive" src="../img/sample-cover.jpg" alt="">
-            <h3>
-                Title
-                <small>Author</small>
-            </h3>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img class="img-responsive" src="../img/sample-cover.jpg" alt="">
-            <h3>
-                Title
-                <small>Author</small>
-            </h3>
-        </div>
-        <!--  END-->
+    <input type="text" id="bookTitle" />
 
-
-        <script id="author-list-template" type="x-mustache-template">
-
-            <h1>Books:</h1>
-            <ul id="book-list">
-                <li>{{book.Title}} By: {{book.Author}} Status:{{book.Status}}</li>
-            </ul>
-        </script>
-    </div>
-    <div class="box">
-        <div class="form-group col-sm-3">
-            <input type="text" id="bookTitle" class="form-control" />
-        </div>
-        <button class="btn btn-default">Add Book</button>
-        <button class="btn btn-default">Take Book</button>
-        <button class="btn btn-default">Return Book</button>
-        <button class="btn btn-default">Delete Book By Title</button>
-    </div>
+    <button>Add Book</button>
+    <button>Take Book</button>
+    <button>Return Book</button>
+    <button>Delete Book By Title</button>
 </div>
