@@ -19,7 +19,7 @@
 
         public int BookId { get; set; }
 
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         public virtual Status Status { get; set; }
 

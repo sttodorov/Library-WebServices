@@ -1,9 +1,10 @@
 ﻿namespace Library.Services.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
     using System.Linq.Expressions;
-
     using Library.Model;
 
     public class AuthorModel
@@ -21,6 +22,7 @@
             }
         }
 
+
         public int AuthorId { get; set; }
 
         [Required]
@@ -32,5 +34,6 @@
         [MinLength(3)]
         [MaxLength(10)]
         public string LastName { get; set; }
+
     }
 }

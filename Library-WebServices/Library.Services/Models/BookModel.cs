@@ -9,31 +9,45 @@ namespace Library.Services.Models
 {
     public class BookModel
     {
-        private ICollection<Author> authors;
+        private IEnumerable<AuthorModel> authors;
+        private IEnumerable<GenreModel> genres;
 
 
-         public static Expression<Func<Book, BookModel>> FromBook
+         public static Expression<Func<Book, BookModel>> FromBookAllInfo
         {
             get
             {
                 return b => new BookModel
                 {
-                     Name = b.Name,
-                     Status = b.Status,
-                     BookId = b.BookId,
-                     Authors = b.Authors
+                    Title = b.Title,
+                    Status = b.Status,
+                    BookId = b.BookId,
+                    Authors = b.Authors.Select(a => new AuthorModel {AuthorId= a.AuthorId, FirstName = a.FirstName, LastName = a.LastName }),
+                    Genres = b.Genres.Select(g => new GenreModel { GenreId = g.GenreId, Name = g.Name })
                 };
             }
         }
+         public static Expression<Func<Book, BookModel>> FromBook
+         {
+             get
+             {
+                 return b => new BookModel
+                 {
+                     Title = b.Title,
+                     Status = b.Status,
+                     BookId = b.BookId
+                 };
+             }
+         }
 
 
         public int BookId { get; set; }
 
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         public virtual Status Status { get; set; }
 
-        public virtual ICollection<Author> Authors
+        public virtual IEnumerable<AuthorModel> Authors
         {
             get
             {
@@ -42,6 +56,18 @@ namespace Library.Services.Models
             set
             {
                 this.authors = value;
+            }
+        }
+
+        public virtual IEnumerable<GenreModel> Genres
+        {
+            get
+            {
+                return this.genres;
+            }
+            set
+            {
+                this.genres = value;
             }
         }
     }

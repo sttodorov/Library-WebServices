@@ -10,6 +10,7 @@
     using Library.Data;
     using Library.Model;
     using System.Collections.Generic;
+    using Library.Services.Models;
 
     [Authorize]
     public class BooksController : ApiController
@@ -29,7 +30,7 @@
         [HttpGet]
         public IHttpActionResult All()
         {
-            return Ok(data.Books.All().Select(a => a.Name));
+            return Ok(data.Books.All().Select(BookModel.FromBookAllInfo));
         }
 
         [HttpGet]
@@ -38,6 +39,7 @@
             var book = this.data
                 .Books
                 .All()
+                .Select(BookModel.FromBookAllInfo)
                 .Where(s => s.BookId == id)
                 .FirstOrDefault();
 
@@ -70,14 +72,15 @@
                     }
                 }
             }
-
             return Ok(booksByGenre);
         }
 
         [HttpGet]
         public IHttpActionResult ByStatus(Status status)
         {
-            var booksByStatus = this.data.Books.All().Where(b => b.Status == status);
+            var booksByStatus = this.data.Books.All()
+                .Select(BookModel.FromBookAllInfo)
+                .Where(b => b.Status == status);
             return Ok(booksByStatus);
         }
 
@@ -91,7 +94,7 @@
 
             var newBook = new Book
             {
-                Name = book.Name
+                Title = book.Title
             };
 
             foreach (var genre in book.Genres)
@@ -104,7 +107,7 @@
                         Name = genre.Name
                     };
                     currGenreFromDb.Books.Add(newBook);
-                    this.data.Genres.Add(currGenreFromDb);
+                    //this.data.Genres.Add(currGenreFromDb);
                 }
 
                 newBook.Genres.Add(currGenreFromDb);
@@ -121,7 +124,7 @@
                         LastName = author.LastName
                     };
                     currentAuthorFromDb.Books.Add(newBook);
-                    this.data.Authors.Add(currentAuthorFromDb);
+                    //this.data.Authors.Add(currentAuthorFromDb);
                 }
 
                 newBook.Authors.Add(currentAuthorFromDb);

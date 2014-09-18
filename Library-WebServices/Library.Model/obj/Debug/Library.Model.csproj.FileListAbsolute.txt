@@ -11,3 +11,17 @@ C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.M
 C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.dll
 C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.pdb
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.dll.config
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.pdb
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.xml
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.csprojResolveAssemblyReference.cache
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.dll
+E:\NewGITFolder\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.pdb
