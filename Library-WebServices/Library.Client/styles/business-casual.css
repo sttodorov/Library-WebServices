@@ -112,7 +112,7 @@ footer {
         padding: 20px 0;
     }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 992px) {
     .brand {
         display: inherit;
         margin: 0;
@@ -162,7 +162,6 @@ footer {
 
     .navbar-default {
         border: none;
-        background: #fff;
         background: rgba(255,255,255,0.9);
     }
 
@@ -183,7 +182,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:  992px) {
     .box:after {
         content: '';
         display: table;

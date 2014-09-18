@@ -1,9 +1,20 @@
 ﻿<div id="searchBook-wrapper">
-    <h1>Search for book</h1>
-    <input type="text" id="input" />
-    <button id="findAuthor">Find</button>
-    <h2>Search by:</h2>
-    <input type="checkbox" name="byAuthor" value="book">By Author<br>
-    <input type="checkbox" name="byTitle" value="book">By Title
+    <div class="box">
+        <hr>
+        <h2 class="intro-text text-center">
+            Search for book
+        </h2>
+        <hr>
+        <div class="form-group col-sm-4">
+            <input type="text" id="input" class="form-control" />
+        </div>
+        <button id="findAuthor" class="btn btn-default">Find</button>
+        <h2 class="intro-text">Search by:</h2>
+        <div class="form-group col-sm-4">
+            <input type="checkbox" name="byAuthor" value="book" class="form-inline">By Author
+            <input type="checkbox" name="byTitle" value="book" class="form-inline">By Title
+        </div>
+
+    </div>
 </div>
 
