@@ -72,7 +72,7 @@
             var genreFromDb = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
             if (genreFromDb == null)
             {
-                return BadRequest("Student does not exist!");
+                return BadRequest("Genre does not exist!");
             }
 
             this.data.Genres.Delete(genreFromDb);

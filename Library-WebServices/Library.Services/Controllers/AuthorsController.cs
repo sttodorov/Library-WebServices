@@ -73,7 +73,7 @@
             var authorFromDb = this.data.Authors.All().FirstOrDefault(s => s.AuthorId == id);
             if (authorFromDb == null)
             {
-                return BadRequest("Such student does not exist!");
+                return BadRequest("Such author does not exist!");
             }
 
             authorFromDb.FirstName = author.FirstName;
@@ -90,7 +90,7 @@
             var authorFromDb = this.data.Authors.All().FirstOrDefault(s => s.AuthorId == id);
             if (authorFromDb == null)
             {
-                return BadRequest("Student does not exist!");
+                return BadRequest("Author does not exist!");
             }
 
             this.data.Authors.Delete(authorFromDb);
