@@ -3,25 +3,73 @@
 <head>
     <title>Library</title>
     <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/business-casual.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
-        <div id="main-content">
-            <ul>
-                <li>
-                    <a href="#/authors">Authors</a>
-                </li>
-                <li>
-                    <a href="#/books">Books</a>
-                </li>
-                <li>
-                    <a href="#/searchAuthor">Find Author</a>
-                </li>
-                <li>
-                    <a href="#/searchBook">Find Book</a>
-                </li>
-            </ul>
+        <!-- Navigation -->
+        <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#/authors">Authors</a>
+                        </li>
+                        <li>
+                            <a href="#/books">Books</a>
+                        </li>
+                        <li>
+                            <a href="#/searchAuthor">Find Author</a>
+                        </li>
+                        <li>
+                            <a href="#/searchBook">Find Book</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    A library
+                    <strong>worth visiting</strong>
+                </h2>
+                <hr>
+                <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+                <hr class="visible-xs">
+                <p>TODO</p>
+                <p>TODO</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
         </div>
     </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; MelonyProject Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/libs/jquery-2.1.1.js"></script>
+    <script src="scripts/libs/bootstrap.js"></script>
 </body>
 </html>

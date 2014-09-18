@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,10 +68,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\bg.jpg" />
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\libraryController.js" />
-    <Content Include="scripts\libs\core.js" />
+    <Content Include="scripts\libs\bootstrap.js" />
+    <Content Include="scripts\libs\bootstrap.min.js" />
     <Content Include="scripts\libs\jquery-2.1.1.js" />
     <Content Include="scripts\libs\mustache.js" />
     <Content Include="scripts\libs\q.js" />
@@ -78,6 +84,10 @@
     <Content Include="scripts\libs\sha1.js" />
     <Content Include="scripts\modules\requester.js" />
     <Content Include="scripts\ui\ui.js" />
+    <Content Include="styles\3-col-portfolio.css" />
+    <Content Include="styles\bootstrap.css" />
+    <Content Include="styles\bootstrap.min.css" />
+    <Content Include="styles\business-casual.css" />
     <Content Include="templates\Authors.html" />
     <Content Include="templates\Books.html" />
     <Content Include="templates\SearchAuthor.html" />
@@ -87,9 +97,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="styles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
