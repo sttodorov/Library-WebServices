@@ -1,8 +1,6 @@
 ﻿namespace Library.Services.Controllers
 {
-    using System;
     using System.Linq;
-    using System.Web;
     using System.Web.Http;
 
     using Library.Data;
@@ -13,10 +11,6 @@
     {
         private ILibraryData data;
 
-        //public AuthorsController()
-        //    : this(new LibraryData())
-        //{
-        //}
 
         public AuthorsController(ILibraryData data)
         {

@@ -1,23 +1,26 @@
 ﻿namespace Library.Services.Models
 {
-    using Library.Model;
     using System;
     using System.Linq.Expressions;
+
+    using Library.Model;
+
     public class GenreModel
     {
         public static Expression<Func<Genre, GenreModel>> FromGenre
         {
             get
             {
-                return g => new GenreModel
+                return genre => new GenreModel
                 {
-                    GenreId = g.GenreId,
-                    Name = g.Name
+                    GenreId = genre.GenreId,
+                    Name = genre.Name
                 };
             }
         }
 
         public int GenreId { get; set; }
+
         public string Name { get; set; }
     }
 }

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Linq;
-    using System.Web;
     using System.Web.Http;
 
     using Microsoft.AspNet.Identity;
@@ -16,11 +15,6 @@
     public class BooksController : ApiController
     {
         private ILibraryData data;
-
-        //public BooksController()
-        //    : this(new LibraryData())
-        //{
-        //}
 
         public BooksController(ILibraryData data)
         {
@@ -54,24 +48,15 @@
         [HttpGet]
         public IHttpActionResult ByGenre(string genre)
         {
-            if(string.IsNullOrEmpty(genre))
+            if (string.IsNullOrEmpty(genre))
             {
                 return BadRequest("Genre Required.");
             }
 
-            var allBooks = this.data.Books.All();
-            var booksByGenre = new List<Book>();
+            var booksByGenre = this.data.Books.All()
+                                   .Where(b => b.Genres.Any(g => g.Name == genre))
+                                   .Select(BookModel.FromBookAllInfo);
 
-            foreach (var book in allBooks)
-            {
-                foreach (var bookGenre in book.Genres)
-                {
-                    if (bookGenre.Name == genre)
-                    {
-                        booksByGenre.Add(book);
-                    }
-                }
-            }
             return Ok(booksByGenre);
         }
 
@@ -107,16 +92,16 @@
                         Name = genre.Name
                     };
                     currGenreFromDb.Books.Add(newBook);
-                    //this.data.Genres.Add(currGenreFromDb);
+                    this.data.Genres.Add(currGenreFromDb);
                 }
 
                 newBook.Genres.Add(currGenreFromDb);
             }
-            
+
             foreach (var author in book.Authors)
             {
                 var currentAuthorFromDb = this.data.Authors.All().FirstOrDefault(a => a.FirstName == author.FirstName && a.LastName == author.LastName);
-                if(currentAuthorFromDb == null)
+                if (currentAuthorFromDb == null)
                 {
                     currentAuthorFromDb = new Author
                     {
@@ -124,7 +109,7 @@
                         LastName = author.LastName
                     };
                     currentAuthorFromDb.Books.Add(newBook);
-                    //this.data.Authors.Add(currentAuthorFromDb);
+                    this.data.Authors.Add(currentAuthorFromDb);
                 }
 
                 newBook.Authors.Add(currentAuthorFromDb);
@@ -144,13 +129,14 @@
             var bookFromDb = this.data.Books.All().FirstOrDefault(s => s.BookId == id);
             if (bookFromDb == null)
             {
-                return BadRequest("Such book does not exists!");
+                return BadRequest("Such book does not exist!");
             }
 
             if (bookFromDb.Status == Status.Available)
             {
                 bookFromDb.Status = Status.Taken;
-                bookFromDb.TookenBy.Add(this.data.Users.All().FirstOrDefault(u => u.Id == currentUserId));
+                bookFromDb.TookenBy.Add(this.data.Users.All()
+                                            .FirstOrDefault(u => u.Id == currentUserId));
             }
             else
             {
@@ -176,7 +162,5 @@
 
             return Ok();
         }
-
-
     }
 }

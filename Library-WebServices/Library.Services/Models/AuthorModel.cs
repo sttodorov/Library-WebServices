@@ -1,10 +1,9 @@
 ﻿namespace Library.Services.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
     using System.Linq.Expressions;
+
     using Library.Model;
 
     public class AuthorModel
@@ -13,11 +12,11 @@
         {
             get
             {
-                return a => new AuthorModel
+                return author => new AuthorModel
                 {
-                    AuthorId = a.AuthorId,
-                    FirstName = a.FirstName,
-                    LastName = a.LastName
+                    AuthorId = author.AuthorId,
+                    FirstName = author.FirstName,
+                    LastName = author.LastName
                 };
             }
         }
