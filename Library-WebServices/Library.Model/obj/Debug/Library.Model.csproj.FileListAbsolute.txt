@@ -1,0 +1,13 @@
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.dll.config
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Library.Model.pdb
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.xml
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.dll
+C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Model\obj\Debug\Library.Model.pdb

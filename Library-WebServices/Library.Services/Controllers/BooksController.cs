@@ -9,6 +9,7 @@
 
     using Library.Data;
     using Library.Model;
+    using System.Collections.Generic;
 
     [Authorize]
     public class BooksController : ApiController
@@ -47,6 +48,32 @@
 
             return Ok(book);
         }
+
+        [HttpGet]
+        public IHttpActionResult ByGenre(string genre)
+        {
+            if(string.IsNullOrEmpty(genre))
+            {
+                return BadRequest("Genre Required.");
+            }
+
+            var allBooks = this.data.Books.All();
+            var booksByGenre = new List<Book>();
+
+            foreach (var book in allBooks)
+            {
+                foreach (var bookGenre in book.Genres)
+                {
+                    if (bookGenre.Name == genre)
+                    {
+                        booksByGenre.Add(book);
+                    }
+                }
+            }
+
+            return Ok(booksByGenre);
+        }
+
         [HttpGet]
         public IHttpActionResult ByStatus(Status status)
         {
@@ -146,5 +173,7 @@
 
             return Ok();
         }
+
+
     }
 }
