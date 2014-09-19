@@ -27,18 +27,6 @@ namespace Library.Services.Models
                 };
             }
         }
-         public static Expression<Func<Book, BookModel>> FromBook
-         {
-             get
-             {
-                 return b => new BookModel
-                 {
-                     Title = b.Title,
-                     Status = b.Status,
-                     BookId = b.BookId
-                 };
-             }
-         }
 
 
         public int BookId { get; set; }

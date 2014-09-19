@@ -47,6 +47,14 @@
         }
 
         [HttpGet]
+        public IHttpActionResult ByTitle(string bookTitle)
+        {
+            var books = this.data.Books.All().Where(a => a.Title.ToLower().Contains(bookTitle.ToLower())).Select(BookModel.FromBookAllInfo);
+
+            return Ok(books);
+        }
+
+        [HttpGet]
         public IHttpActionResult ByGenre(string genre)
         {
             if (string.IsNullOrEmpty(genre))
@@ -71,8 +79,8 @@
         [HttpGet]
         public IHttpActionResult TokenBy(int id)
         {
-            var users = this.data.Books.All().FirstOrDefault(b => b.BookId == id).TookenBy;
-
+            var book = this.data.Books.All().FirstOrDefault(b => b.BookId == id);
+            var users = book.TookenBy.Select(u => new UserModel { Username = u.Email });
             if (users == null )
             {
                 return BadRequest("Book with this id does not exists!");

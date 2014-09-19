@@ -13,11 +13,6 @@
     {
         private ILibraryData data;
 
-        //public AuthorsController()
-        //    : this(new LibraryData())
-        //{
-        //}
-
         public AuthorsController(ILibraryData data)
         {
             this.data = data;
@@ -45,6 +40,17 @@
             }
 
             return Ok(author);
+        }
+
+        [HttpGet]
+        public IHttpActionResult ByName(string name)
+        {
+            var authors = this.data.Authors.All()
+                .Where(a => a.FirstName.ToLower().Contains(name.ToLower()) 
+                        || a.LastName.ToLower().Contains(name.ToLower()))
+                .Select(AuthorModel.FromAuthor);
+
+            return Ok(authors);
         }
 
         [HttpPost]
