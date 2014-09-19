@@ -77,11 +77,24 @@
         }
 
         [HttpGet]
+        public IHttpActionResult ByAuthor(string authorName)
+        {
+            authorName = authorName.ToLower();
+
+            var books = this.data.Books.All()
+                .Select(BookModel.FromBookAllInfo)
+                .Where(a => a.Authors.Any(au => au.FirstName.ToLower().Contains(authorName)
+                                              || au.LastName.ToLower().Contains(authorName)));
+            
+            return Ok(books);
+        }
+
+        [HttpGet]
         public IHttpActionResult TokenBy(int id)
         {
             var book = this.data.Books.All().FirstOrDefault(b => b.BookId == id);
             var users = book.TookenBy.Select(u => new UserModel { Username = u.Email });
-            if (users == null )
+            if (users == null)
             {
                 return BadRequest("Book with this id does not exists!");
             }
