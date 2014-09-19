@@ -13,16 +13,13 @@
     using Library.Services.Models;
     using System.Text;
 
-    [Authorize]
     public class BooksController : ApiController
     {
         private ILibraryData data;
-        //private IRemotaData dropbox;
 
-        public BooksController(ILibraryData data)//, IRemotaData remoteData)
+        public BooksController(ILibraryData data)
         {
             this.data = data;
-            //this.dropbox = remoteData;
         }
 
         [HttpGet]
@@ -71,6 +68,19 @@
             return Ok(booksByStatus);
         }
 
+        [HttpGet]
+        public IHttpActionResult TokenBy(int id)
+        {
+            var users = this.data.Books.All().FirstOrDefault(b => b.BookId == id).TookenBy;
+
+            if (users == null )
+            {
+                return BadRequest("Book with this id does not exists!");
+            }
+
+            return Ok(users);
+        }
+
         [HttpPost]
         public IHttpActionResult Create(Book book)
         {
@@ -78,7 +88,7 @@
             {
                 return BadRequest(ModelState);
             }
-            //this.dropbox.UploadFile(Encoding.UTF8.GetBytes(book.Title + " " +book.Status), book.BookId + "Review", "root");
+
             var newBook = new Book
             {
                 Title = book.Title,
