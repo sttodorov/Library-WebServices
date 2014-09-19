@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\bg.jpg" />
+    <Content Include="img\intro-pic.jpg" />
+    <Content Include="img\sample-cover.jpg" />
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\libraryController.js" />
