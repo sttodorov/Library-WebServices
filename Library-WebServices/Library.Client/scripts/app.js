@@ -13,12 +13,15 @@
         },
     });
 
-    require(['sammy', 'jquery', 'libraryController'], function (Sammy, $, libraryController) {
+    require(['sammy', 'jquery', 'libraryController'], function (Sammy, $, LibraryController) {
 
-        var resourceURL = 'http://melonlibrary.apphb.com/';
-      //  var libraryApp = new libraryController('#main-content', resourceURL);
+        //var resourceURL = 'http://melonlibrary.apphb.com/';
+        var resourceURL = 'http://localhost:51236/';
+        var libraryApp = new LibraryController('#main-container', resourceURL);
+        'http://localhost:51236/'
 
-      //  libraryApp.addEvents();
+
+        //  libraryApp.addEvents();
 
         var app = Sammy('#main-container', function () {
 
@@ -28,7 +31,7 @@
 
             this.get('#/authors', function () {
                 $('#main-container').load('templates/Authors.html');
-               // this.partial('..//templates//Authors.html');
+                // this.partial('..//templates//Authors.html');
                 // libraryApp.loadAuthors();
             });
 
