@@ -1,6 +1,0 @@
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\bin\Library.Client.dll.config
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\bin\Library.Client.dll
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\bin\Library.Client.pdb
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\obj\Debug\Library.Client.csprojResolveAssemblyReference.cache
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\obj\Debug\Library.Client.dll
-C:\Users\gesh\Documents\GitHub\Library-WebServices\Library-WebServices\Library.Client\obj\Debug\Library.Client.pdb
