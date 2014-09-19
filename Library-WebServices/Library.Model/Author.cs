@@ -1,6 +1,7 @@
 ﻿namespace Library.Model
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Author
     {
@@ -15,6 +16,8 @@
 
         public string FirstName { get; set; }
 
+        [Required]
+        [MinLength(2)]
         public string LastName { get; set; }
 
         public virtual ICollection<Book> Books

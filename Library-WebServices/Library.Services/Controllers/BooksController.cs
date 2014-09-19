@@ -119,7 +119,9 @@
 
             foreach (var genre in book.Genres)
             {
-                var currGenreFromDb = this.data.Genres.All().FirstOrDefault(g => g.Name == genre.Name);
+                var currGenreFromDb = this.data.Genres.All()
+                                            .FirstOrDefault(g => g.Name == genre.Name);
+
                 if (currGenreFromDb == null)
                 {
                     currGenreFromDb = new Genre
@@ -135,7 +137,10 @@
 
             foreach (var author in book.Authors)
             {
-                var currentAuthorFromDb = this.data.Authors.All().FirstOrDefault(a => a.FirstName == author.FirstName && a.LastName == author.LastName);
+                var currentAuthorFromDb = this.data.Authors.All()
+                    .FirstOrDefault(a => a.FirstName == author.FirstName 
+                                       && a.LastName == author.LastName);
+
                 if (currentAuthorFromDb == null)
                 {
                     currentAuthorFromDb = new Author
@@ -143,6 +148,7 @@
                         FirstName = author.FirstName,
                         LastName = author.LastName
                     };
+
                     currentAuthorFromDb.Books.Add(newBook);
                     this.data.Authors.Add(currentAuthorFromDb);
                 }

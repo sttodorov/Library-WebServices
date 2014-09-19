@@ -1,13 +1,12 @@
 ﻿﻿namespace Library.Services.Controllers
  {
      using System;
-    using System.Data;
      using System.Linq;
      using System.Web.Http;
      using Library.Data;
      using Library.Services.Models;
-    using Library.Model;
- 
+     using Library.Model;
+
      public class GenresController : ApiController
      {
          private ILibraryData data;
@@ -24,83 +23,83 @@
 
              return Ok(genres);
          }
- 
-        [HttpPost]
-        public IHttpActionResult Create(GenreModel genre)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            var newGenre = new Genre
-            {
-                Name = genre.Name
-            };
+         [HttpPost]
+         public IHttpActionResult Create(GenreModel genre)
+         {
+             if (!this.ModelState.IsValid)
+             {
+                 return BadRequest(ModelState);
+             }
 
-            this.data.Genres.Add(newGenre);
-            this.data.SaveChanges();
+             var newGenre = new Genre
+             {
+                 Name = genre.Name
+             };
 
-            genre.GenreId = newGenre.GenreId;
-            return Ok(genre);
-        }
+             this.data.Genres.Add(newGenre);
+             this.data.SaveChanges();
 
-        [HttpPut]
-        public IHttpActionResult Update(int id, GenreModel genre)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+             genre.GenreId = newGenre.GenreId;
+             return Ok(genre);
+         }
 
-            var genreFromDb = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
-            if (genreFromDb == null)
-            {
-                return BadRequest("Such genre does not exist!");
-            }
+         [HttpPut]
+         public IHttpActionResult Update(int id, GenreModel genre)
+         {
+             if (!this.ModelState.IsValid)
+             {
+                 return BadRequest(ModelState);
+             }
 
-            genreFromDb.Name = genre.Name;
-            this.data.SaveChanges();
+             var genreFromDb = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
+             if (genreFromDb == null)
+             {
+                 return BadRequest("Such genre does not exist!");
+             }
 
-            genre.GenreId = id;
+             genreFromDb.Name = genre.Name;
+             this.data.SaveChanges();
 
-            return Ok(genre);
-        }
+             genre.GenreId = id;
 
-        [HttpDelete]
-        public IHttpActionResult Delete(int id)
-        {
-            var genreFromDb = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
-            if (genreFromDb == null)
-            {
-                return BadRequest("Student does not exist!");
-            }
+             return Ok(genre);
+         }
 
-            this.data.Genres.Delete(genreFromDb);
-            this.data.SaveChanges();
+         [HttpDelete]
+         public IHttpActionResult Delete(int id)
+         {
+             var genreFromDb = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
+             if (genreFromDb == null)
+             {
+                 return BadRequest("Student does not exist!");
+             }
 
-            return Ok();
-        }
-        
-        [HttpPost]
-        public IHttpActionResult AddBook(int id, int bookId)
-        {
-            var genre = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
-            if (genre == null)
-            {
-                return BadRequest("Genre does not exist - invalid id!");
-            }
+             this.data.Genres.Delete(genreFromDb);
+             this.data.SaveChanges();
 
-            var book = this.data.Books.All().FirstOrDefault(c => c.BookId == bookId);
-            if (book == null)
-            {
-                return BadRequest("Book does not exist - invalid id!");
-            }
+             return Ok();
+         }
 
-            genre.Books.Add(book);
-            this.data.SaveChanges();
+         [HttpPost]
+         public IHttpActionResult AddBook(int id, int bookId)
+         {
+             var genre = this.data.Genres.All().FirstOrDefault(s => s.GenreId == id);
+             if (genre == null)
+             {
+                 return BadRequest("Genre does not exist - invalid id!");
+             }
 
-            return Ok();
-        }
+             var book = this.data.Books.All().FirstOrDefault(c => c.BookId == bookId);
+             if (book == null)
+             {
+                 return BadRequest("Book does not exist - invalid id!");
+             }
+
+             genre.Books.Add(book);
+             this.data.SaveChanges();
+
+             return Ok();
+         }
      }
  }

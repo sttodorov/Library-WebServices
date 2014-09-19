@@ -1,6 +1,7 @@
 ﻿namespace Library.Model
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Book
     {
@@ -19,12 +20,15 @@
 
         public int BookId { get; set; }
 
+        [Required]
+        [MinLength(2)]
         public string Title { get; set; }
 
         public virtual Status Status { get; set; }
 
         public string Rewiew { get; set; }
 
+        [Required]
         public virtual ICollection<Author> Authors
         {
             get
@@ -62,6 +66,5 @@
                 this.tookenBy = value;
             }
         }
-
     }
 }

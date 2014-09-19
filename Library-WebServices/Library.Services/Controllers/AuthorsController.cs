@@ -47,7 +47,7 @@
         {
             var authors = this.data.Authors.All()
                 .Where(a => a.FirstName.ToLower().Contains(name.ToLower()) 
-                        || a.LastName.ToLower().Contains(name.ToLower()))
+                          || a.LastName.ToLower().Contains(name.ToLower()))
                 .Select(AuthorModel.FromAuthor);
 
             return Ok(authors);
